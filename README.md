@@ -33,20 +33,27 @@ It wrote the code, ran away, and now the game is unplayable.
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. <!-- Describe this step --> User enters a guess of 50
+2. <!-- Describe this step --> Game returns "Go higher"
+3. <!-- Describe this step --> User enters a guess of 68 ->  Game returns "Go lower"
+4. <!-- Describe this step --> User enters a guess of 63
+5. <!-- Add more steps as needed --> Game returns "Correct" -> You won! The secret was 63. Final score: 35
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
+<img width="1332" height="622" alt="image" src="https://github.com/user-attachments/assets/ae97f37a-5f03-4521-ac21-d1634c6c08ef" />
 
 ## 🧪 Test Results
 
 ```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
+# $ pytest tests/
+============================= test session starts =============================
+platform win32 -- Python 3.14.3, pytest-9.0.3, pluggy-1.6.0
+collected 7 items
+
+tests\test_game_logic.py .......                                         [100%]
+
+============================== 7 passed in 0.03s ==============================
+
 ```
 
 ## 🚀 Stretch Features
