@@ -39,13 +39,13 @@ Document at least 3 bugs you found. Add rows as needed.
 
 ## 4. What did you learn about Streamlit and state?
 
-- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
+- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit? I would tell them that every time you click a button or type something, Streamlit re-runs the whole script from top to bottom, like refreshing the page. Because of that, any normal variable gets wiped and reset on every interaction, so you can't just store the secret number or the score in a regular variable. That is what `st.session_state` is for: it's a little memory box that survives across reruns, so the secret, attempts, score, and history stay the same until you choose to change them. This project showed me that directly the "New Game" bug happened because the reset code only changed some of the session_state values and left the old `status` behind, so the game kept thinking it was over even after a rerun.
 
 ---
 
 ## 5. Looking ahead: your developer habits
 
 - What is one habit or strategy from this project that you want to reuse in future labs or projects?
-  - This could be a testing habit, a prompting strategy, or a way you used Git.
-- What is one thing you would do differently next time you work with AI on a coding task?
-- In one or two sentences, describe how this project changed the way you think about AI generated code.
+  - This could be a testing habit, a prompting strategy, or a way you used Git. The habit I want to keep is writing a small automated test for every bug I fix, especially at the boundaries (like guessing 1 and 100). Once I had pytest tests for the reversed-hint bug, I could re-run them in a second and know the fix was still working instead of clicking through the app by hand every time. It turns "I think it's fixed" into "I can prove it's fixed," and it protects me from breaking the same thing again later.
+- What is one thing you would do differently next time you work with AI on a coding task? Next time I would ask the AI to explain *why* a bug happens and show me the exact line before I let it suggest a fix, instead of accepting the first confident explanation. With the backwards-hint bug, the AI's first answer sounded right but was wrong, and I wasted time on it. Slowing down to verify the cause first would have saved me a step.
+- In one or two sentences, describe how this project changed the way you think about AI generated code. I now treat AI-generated code as a fast first draft from a teammate who is often right but sometimes confidently wrong, not as a finished answer. My job is to read it, test it, and reproduce the bug myself before I trust that it's actually fixed.
